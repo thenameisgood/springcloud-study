@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: CONFIG-CLIENT
+  cloud:
+    nacos:
+      #nacos server 总地址
+      server-addr: 127.0.0.1:8848
+      #作为 nacos client的注册地址
+      discoverys:
+        #也可以不写  默认${spring.cloud.nacos.server-addr}
+        server-addr: 127.0.0.1:8848
+        #也可以不写  ${spring.application.name}
+        service: CONFIG-CLIENT
+      config:
+        # 告诉 config server 地址
+        server-addr: 127.0.0.1:8848
+        # 从哪个命名空间获取
+        #namespace:
+        # 从哪个组进行配置获取
+        group: DEFAULT_GROUP
+        # 第二种获取配置文件的方式  dataId = prefix + env(spring.profile.active) + file-extension
+        prefix: configclient
+        file-extension: yaml
+        refresh-enabled: true
+        enable-remote-sync-config: true
+  profiles:
+    active: prod
+
+    # 第一种获取配置文件的方式 dataId = name + file-extension
+#        name: configclient
+#        file-extension: yaml

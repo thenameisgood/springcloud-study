@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="userss" />
+        <module name="springcloud-10hystrix-dashboard" />
+        <module name="springcloud-11gateway" />
+        <module name="springcloud-02eureka-client" />
+        <module name="springcloud-12config-server" />
+        <module name="springcloudalibaba-01nacos-client" />
+        <module name="springcloud-05orders" />
+        <module name="springcloudalibaba-02users" />
+        <module name="commons" />
+        <module name="springcloudalibaba-04config-client" />
+        <module name="products" />
+        <module name="springcloudalibaba-03products" />
+        <module name="springcloud-04users" />
+        <module name="springcloudalibaba-05sentinel" />
+        <module name="springcloud-07openfeign-product" />
+        <module name="springcloud-13config-client" />
+        <module name="springcloud-09openfeign-hystrix" />
+        <module name="springcloud-06openfeign-category" />
+        <module name="springcloud-08hystrix" />
+        <module name="springcloud-01eureka-server" />
+        <module name="springcloud-03consul-client" />
+        <module name="gateway" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="commons" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="products" options="-parameters" />
+      <module name="springcloud-01eureka-server" options="-parameters" />
+      <module name="springcloud-02eureka-client" options="-parameters" />
+      <module name="springcloud-03consul-client" options="-parameters" />
+      <module name="springcloud-04users" options="-parameters" />
+      <module name="springcloud-05orders" options="-parameters" />
+      <module name="springcloud-06openfeign-category" options="-parameters" />
+      <module name="springcloud-07openfeign-product" options="-parameters" />
+      <module name="springcloud-08hystrix" options="-parameters" />
+      <module name="springcloud-09openfeign-hystrix" options="-parameters" />
+      <module name="springcloud-10hystrix-dashboard" options="-parameters" />
+      <module name="springcloud-11gateway" options="-parameters" />
+      <module name="springcloud-12config-server" options="-parameters" />
+      <module name="springcloud-13config-client" options="-parameters" />
+      <module name="springcloudalibaba-01nacos-client" options="-parameters" />
+      <module name="springcloudalibaba-02users" options="-parameters" />
+      <module name="springcloudalibaba-03products" options="-parameters" />
+      <module name="springcloudalibaba-04config-client" options="-parameters" />
+      <module name="springcloudalibaba-05sentinel" options="-parameters" />
+      <module name="userss" options="-parameters" />
+    </option>
+  </component>
+</project>

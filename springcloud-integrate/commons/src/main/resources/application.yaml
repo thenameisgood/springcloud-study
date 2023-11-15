@@ -1,0 +1,8 @@
+server:
+  port: 8890
+spring:
+  application:
+    name: COMMONS
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848

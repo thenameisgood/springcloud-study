@@ -1,0 +1,15 @@
+server:
+  port: 8760
+spring:
+  application:
+    name: EUREKA-CLIENT
+eureka:
+  client:
+    service-url:
+      #指定服务注册中心地址
+      defaultZone: http://127.0.0.1:8761/eureka,http://127.0.0.1:8762/eureka,http://127.0.0.1:8763/eureka
+  instance:
+    #用来修改eureka server默认接收心跳的最大时间  默认是90s
+    lease-expiration-duration-in-seconds: 10
+    #指定客户端多久向eureka server发送一次心跳  默认是30s
+    lease-renewal-interval-in-seconds: 5

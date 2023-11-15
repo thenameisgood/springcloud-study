@@ -1,0 +1,31 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: CONFIG-SERVER
+    config:
+      server:
+        git:
+          uri: https://gitee.com/wangStudying/springcloud-configs.git
+          default-label: master
+          skip-ssl-validation: true
+          username: 19550161330
+          password: ilwanght0921
+  #通过bus连接mq配置
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

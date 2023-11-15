@@ -1,0 +1,42 @@
+server:
+  port: 8989
+spring:
+  application:
+    name: GATEWAYY
+  cloud:
+    # 把网管注册到 nacos
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: GATEWAYY
+    # gateway = 路由转发(routes)+请求过滤(filter)
+    gateway:
+      routes:
+        - id: userss_route
+          #不能实现负载均衡
+          #uri: http://127.0.0.1:8888
+          uri: lb://USERSS
+          # 断言
+          predicates:
+            #好多种断言  Path After Before Between   Cookie=name,[A-Za-z0-9]+    Header   Method...
+            - Path=/userss/**
+            #- Path=/category/list,/category/save
+            #- After=2022-09-23T14:09:02.985+08:00[Asia/Shanghai]
+          # 过滤器
+          #filters:
+            #好多过滤器  AddRequestHeader AddRequestParameter AddResponseHeader PrefixPath=/mypath(添加路径) StripPrefix=1(去掉路径)
+            #- AddRequestHeader=User-Name, wang
+            #- AddResponseHeader=ABC, iiiiiiiiiii
+        - id: products_route
+          #uri: http://127.0.0.1:9999
+          uri: lb://PRODUCTS
+          predicates:
+            - Path=/products/**
+            #- Path=/product/list,/product/product
+#http://127.0.0.1:8080/actuator/gateway/routes  查看网管路由规则详细路径，需要暴露前面的网址端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

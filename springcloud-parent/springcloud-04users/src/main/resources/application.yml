@@ -1,0 +1,15 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: USERS
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+# 更改负载均衡测量 IRule
+ORDERS:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

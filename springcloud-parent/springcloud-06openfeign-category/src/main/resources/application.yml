@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: CATEGORY
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+#openfeign默认超时时间  连接时间和等待时间
+feign:
+  client:
+    config:
+      #订单服务
+      PRODUCT:
+        connect-timeout: 5000
+        read-timeout: 5000
+        #NONE HEADERS FULL
+        loggerLevel: full
+      CATEGORY:
+        # NONE BASIC HEADERS FULL
+        loggerLevel: full
+      #对所有服务都有效
+      default:
+        connect-timeout: 5000
+        read-timeout: 5000
+logging:
+  config:
+    com:
+      wang:
+        feignclient: debug

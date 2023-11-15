@@ -1,0 +1,14 @@
+server:
+  port: 8851
+spring:
+  application:
+    name: CONFIG-CLIENT
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        service-name: CONFIG-CLIENT
+  profiles:
+    active: prod
+name: 王原始

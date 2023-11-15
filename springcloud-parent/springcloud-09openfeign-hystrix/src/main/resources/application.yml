@@ -1,0 +1,17 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: OPENFEIGN-HYSTRIX
+  cloud:
+    consul:
+      #consul server服务注册地址
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        #当前服务的名字
+        service-name: OPENFEIGN-HYSTRIX
+#开启openfeign在调用服务过程中，开启hystrix支持  默认：未开启
+feign:
+  hystrix:
+    enabled: true

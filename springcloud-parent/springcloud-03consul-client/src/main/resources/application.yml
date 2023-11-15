@@ -1,0 +1,16 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: CONSUL-CLIENT
+  cloud:
+    consul:
+      #consul server服务注册地址
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        #当前服务的名字
+        service-name: CONSUL-CLIENT
+        #service-name: ${spring.application.name}
+        #关闭健康检查  不推荐关闭；    引入spring-boot-starter-actuator依赖就可以解决心跳机制问题
+#        register-health-check: false

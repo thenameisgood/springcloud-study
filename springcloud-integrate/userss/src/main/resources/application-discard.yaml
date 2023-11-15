@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: USERSS
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      #作为 nacos client的注册地址
+      discoverys:
+        #也可以不写  默认${spring.cloud.nacos.server-addr}
+        server-addr: 127.0.0.1:8848
+        #也可以不写  ${spring.application.name}
+        service: SENTINEL
+    # 开启 sentinel 保护
+    sentinel:
+      enabled: true
+      eager: true
+      transport:
+        # 指定 sentinel dashboard web 地址
+        dashboard: 127.0.0.1:9090
+        # 指定 sentinel 组件与 sentinel dashboard 组件通信地址
+        port: 9999

@@ -1,0 +1,37 @@
+# 由于把配置都存在了云端，需要使用 bootstrap.yml，告诉该微服务去配置中心找那个 ConfigServer，然后拉去配置文件
+# 注意这个bootstrap的配置并不是最终配置，需要通过这里面的配置拉取远端配置，以获取远端配置启动
+spring:
+  application:
+    name: CONFIG-CLIENT
+  cloud:
+    #去consul注册微服务，consul的这段配置也可以放在 Gitee 上
+#    consul:
+#      host: 127.0.0.1
+#      port: 8500
+#      discovery:
+#        service-name: CONFIG-CLIENT-HaHa
+    config:
+      discovery:
+        #开启当前configclient 根据服务id去注册中心获取
+        enabled: true
+        #根据服务id获取configserver是不行的    要根据统一配置中心在注册中心服务id,因为可能存在多个configserver
+        service-id: CONFIG-SERVER
+      label: master       #分支
+      name: configclient  #文件名
+      profile: prod       #环境
+      fail-fast: true
+
+
+
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#开启所有web端点暴露
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"

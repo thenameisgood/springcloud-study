@@ -1,0 +1,22 @@
+spring:
+  application:
+    #服务名不区分大小写 不能有下划线
+    name: EUREKA-SERVER
+server:
+  #默认就是8761
+  port: 8761
+#eureka server服务注册中心地址 暴露服务地址
+eureka:
+  client:
+    service-url:
+      # 尽量不用localhost
+      defaultZone: http://127.0.0.1:8762/eureka,http://127.0.0.1:8763/eureka
+    #关闭eureka client立即注册    集群时要为true
+    fetch-registry: false
+    #当前应用仅仅是服务注册中心      集群时要为true
+    register-with-eureka: false
+  server:
+    #关闭自我保护机制  默认开启自我保护
+    enable-self-preservation: false
+    #超时5s自动清除
+    eviction-interval-timer-in-ms: 5000

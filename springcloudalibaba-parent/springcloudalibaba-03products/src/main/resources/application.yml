@@ -1,0 +1,15 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: PRODUCTS-CLIENT
+  cloud:
+    nacos:
+      #nacos server 总地址
+      server-addr: 127.0.0.1:8848
+      #作为 nacos client的注册地址
+      discoverys:
+        #可以不写  ${spring.cloud.nacos.server-addr}
+        server-addr: 127.0.0.1:8848
+        #可以不写  ${spring.application.name}
+        service: PRODUCTS-CLIENT

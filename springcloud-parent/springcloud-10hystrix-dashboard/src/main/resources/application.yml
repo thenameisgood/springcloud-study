@@ -1,0 +1,13 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: HYSTRIX-DASHBOARD
+  cloud:
+    consul:
+      #consul server服务注册地址
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        #当前服务的名字
+        service-name: HYSTRIX-DASHBOARD

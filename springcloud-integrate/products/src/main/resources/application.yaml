@@ -1,0 +1,10 @@
+server:
+  port: 8889
+spring:
+  application:
+    name: PRODUCTS
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: 2d5d0b20-2942-476a-9ac6-1f41cf67fde9
